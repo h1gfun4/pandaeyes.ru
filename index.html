@@ -3,37 +3,205 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>pandaeyes</title>
-    <style>
-      body {
-        margin: 0;
-        overflow: hidden;
-      }
-    </style>
+    <title>Pandaeyes</title>
+    <link rel="stylesheet" href="./style/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Russo+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <canvas id="q"></canvas>
-    <script>
-      const s = window.screen;
-      const w = (q.width = s.width);
-      const h = (q.height = s.height);
-      const ctx = q.getContext("2d");
+    <!--Верхняя полоска с логотипом и оснавная чсть хедера, с навигацией и слайдером. Пусть будет отдельным контейнером от остального контента, так будет удобней задать ширину.-->
+    <header>
+      <div class="top-header">
+        <div class="text-logo">
+          <img src="./img/text-logo.png" alt="" />
+        </div>
+      </div>
+      <div class="main-header">
+        <div class="nav">
+          <!--Блок с навигацией-->
+          <img class="img-logo" src="./img/logo_panda.png" alt="" />
+          <ul class="navbar">
+            <li><a href="./pages/blog.html">наш блог</a></li>
+            <li><a href="./pages/schoolbook.html">учебник</a></li>
+            <li><a href="./pages/aboutus.html">о проекте</a></li>
+            <li><a href="./pages/roadmap.html">roadmap</a></li>
+          </ul>
+        </div>
+        <div class="slider-container">
+          <!--Слайдер с цитатами-->
+          <div class="sim-slider">
+            <ul class="sim-slider-list">
+              <li>
+                <img class="img-slider" src="img/no-image.gif" alt="screen" />
+              </li>
+              <!-- это экран -->
+              <li class="sim-slider-element">
+                <img class="img-slider" src="img/img1.jpg" alt="0" />
+              </li>
+              <li class="sim-slider-element">
+                <img class="img-slider" src="img/img2.jpg" alt="1" />
+              </li>
+              <li class="sim-slider-element">
+                <img class="img-slider" src="img/img3.jpg" alt="2" />
+              </li>
+              <li class="sim-slider-element">
+                <img class="img-slider" src="img/img4.jpg" alt="3" />
+              </li>
+              <li class="sim-slider-element">
+                <img class="img-slider" src="img/img5.jpg" alt="4" />
+              </li>
+              <li class="sim-slider-element">
+                <img class="img-slider" src="img/img6.jpg" alt="5" />
+              </li>
+            </ul>
+            <div class="sim-slider-arrow-left"></div>
+            <div class="sim-slider-arrow-right"></div>
+            <div class="sim-slider-dots"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main-container">
+      <section class="advantages-container">
+        <div class="advantages-left">
+          <!--Заголовок и подпись-->
+          <h1>pandaeyes</h1>
+          <p>
+            свободное изучение<br />
+            веб технологий
+          </p>
+          <!--Мини слайдер с цитатой дня-->
+          <div class="mini-slider-container">
+            <div class="slider">
+              <div class="slider__wrapper">
+                <div class="slider__item">
+                  <div style="background: gray;">♥</div>
+                </div>
+                <div class="slider__item">
+                  <div style="background: red;">♥</div>
+                </div>
+                <div class="slider__item">
+                  <div style="background: white;">♥</div>
+                </div>
+                <div class="slider__item">
+                  <div style="background: yellow;">♥</div>
+                </div>
+              </div>
+              <a
+                class="slider__control slider__control_left"
+                href="#"
+                role="button"
+              ></a>
+              <a
+                class="slider__control slider__control_right"
+                href="#"
+                role="button"
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="advantages-right">
+          <!--Цели проекта (заголовок и список)-->
+          <h2>цели проекта</h2>
+          <ul>
+            <li>
+              Lorem ipsum dolor sit amet consectetur,<br />
+              adipisicing elit.
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur,<br />
+              adipisicing elit
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur,<br />
+              adipisicing elit
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur,<br />
+              adipisicing elit
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur,<br />
+              adipisicing elit
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="articles-container">
+        <!--Блок со статьями-->
+        <a href="#">
+          <div class="article">
+            <img src="./img/proger.png" alt="proger" />
+            <h3>заголовок</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor
+            </p>
+          </div>
+        </a>
+        <a href="#">
+          <div class="article">
+            <img src="./img/proger.png" alt="proger" />
+            <h3>заголовок</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor
+            </p>
+          </div>
+        </a>
+        <a href="#">
+          <div class="article">
+            <img src="./img/proger.png" alt="proger" />
+            <h3>заголовок</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor
+            </p>
+          </div>
+        </a>
+      </section>
+      <section class="description">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <!--Описание блока статей или какая нибудь умная-->
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section-left">
+          <h2>pandaeyes</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </div>
+        <img class="footer-logo" src="./img/footer_logo.png" alt="" />
+        <div class="footer-section-right">
+          <h2>
+            присоединяйся к нам <br />
+            на других платформах
+          </h2>
+          <div class="social">
+            <a href=""><img src="./img/vk.png" alt="vk" /></a>
+            <a href=""><img src="./img/telegram.png" alt="telegram" /></a>
+            <a href=""><img src="./img/youtube.png" alt="youtube" /></a>
+            <a href=""><img src="./img/github.png" alt="github" /></a>
+          </div>
+          <p>копирайт pandaeyes, все дела 2020</p>
+        </div>
+      </div>
+    </footer>
 
-      const p = Array(Math.floor(w / 10) + 1).fill(0);
-
-      const random = (items) => items[Math.floor(Math.random() * items.length)];
-
-      const hex = "0123456789ABCDEF".split("");
-
-      setInterval(() => {
-        ctx.fillStyle = "rgba(0,0,0,.05)";
-        ctx.fillRect(0, 0, w, h);
-        ctx.fillStyle = "#0f0";
-        p.map((v, i) => {
-          ctx.fillText(random(hex), i * 10, v);
-          p[i] = v >= h || v > 50 + 10000 * Math.random() ? 0 : v + 10;
-        });
-      }, 1000 / 30);
-    </script>
+    <script src="./script/script.js"></script>
   </body>
 </html>
