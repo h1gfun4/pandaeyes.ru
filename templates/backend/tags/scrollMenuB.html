@@ -1,0 +1,6 @@
+{% load static %}
+{% for back in scrollMenuB %}
+    <ul class="coursenav__items">
+      <li><a href="{% url 'back_namber' back.url %}">{{ back.title }}</a></li>
+    </ul>
+{% endfor %}

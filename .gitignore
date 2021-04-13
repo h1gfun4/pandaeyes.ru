@@ -1,0 +1,12 @@
+back
+db.sqlite3
+manage.py
+backend/admin.py
+frontend/admin.py
+mainAbout/admin.py
+mainApp/admin.py
+mainBlog/admin.py
+mainBook/admin.py
+mainRoadMap/admin.py
+
+

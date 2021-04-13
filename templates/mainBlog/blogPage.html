@@ -1,0 +1,39 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block content %}
+  <header>
+    <div class="top-header">
+      <div class="text-logo">
+        <img src="{% static 'image/text-logo-blog.png' %}"alt="">
+      </div>
+    </div>
+    <nav class="page-nav-container">
+      <ul class="page-nav-items">
+        <li><a href="/">главная</a></li>
+        <li><a href="/book">учебник</a></li>
+        <li><a href="/about">о проекте</a></li>
+        <li><a href="/roadmap">roadmap</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="blog-main-cotainer">
+    {% for article in article_list %}
+    <a href="{{ article.get_absolute_url }}">
+    <div class="blog-record">
+      <div class="ava-date">
+        <img src="{% static 'image/logo_panda.png' %}" alt="">
+        <p class="date">{{ article.year }}</p>
+      </div>
+      <div class="blog-record-text">
+        <h1>{{ article.title }}</h1>
+        <h3>{{ article.tagline }}</h3>
+        <p>{{ article.description }}</p>
+      </div>  
+    </div>
+  </a>
+  {% endfor %}
+    <div class="arrow-navigation">
+        {% include 'include/pagination.html' %}
+    </div>  
+  </main>
+  {% endblock content %}

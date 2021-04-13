@@ -1,0 +1,33 @@
+{% extends "wrapper.html" %} {% block content %}
+{% load static %}
+  <header>
+    <div class="top-header">
+      <div class="text-logo">
+        <img src="{% static 'image/text-logo-schoolbook.png'%}" alt="" />
+      </div>
+    </div>
+    <nav class="page-nav-container">
+      <ul class="page-nav-items">
+        <li><a href="/">на главную</a></li>
+        <li><a href="/blog">блог</a></li>
+        <li><a href="/about">о проекте</a></li>
+        <li><a href="/roadmap">roadmap</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="schoolbook">
+    <h1 class="shoolbook__title">Выберите тему</h1>
+    {% for direction in direction_list %}
+    <div class="schoolbook__item">
+      <img src="{{ direction.poster.url }}" alt="" class="schoolbook__img">
+      <div class="text__container">
+        <div class="item__title"><h3>{{ direction.title }}</h3></div>
+        <div class="item__discription">
+          <p>{{ direction.description }}</p>
+        </div>
+        <a href="{{ direction.tagline }}" class="btn btn--blue">учить</a>
+      </div>
+    </div>
+    {% endfor %}
+  </main>
+{% endblock content %}

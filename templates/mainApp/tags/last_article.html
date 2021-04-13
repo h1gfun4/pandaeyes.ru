@@ -1,0 +1,10 @@
+{% load static %}
+{% for article in last_article %}
+<a href="{{ article.get_absolute_url }}">
+  <div class="article">
+    <img src="{% static 'image/proger.png'%}" alt="proger" />
+    <h3>{{ article.title }}</h3>
+    <p>{{ article.tagline }}</p>
+  </div>
+</a>
+{% endfor %}

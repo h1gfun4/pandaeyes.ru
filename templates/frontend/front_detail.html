@@ -1,0 +1,67 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% load front_tag %}
+{% block content %}
+<header>
+    <div class="top-header">
+      <div class="text-logo">
+        <img src="{% static 'image/text-logo-schoolbook.png' %}" alt="" />
+      </div>
+    </div>
+    <nav class="page-nav-container">
+      <ul class="page-nav-items">
+        <li><a href="/">главная</a></li>
+        <li><a href="/blog">блог</a></li>
+        <li><a href="/about">о проекте</a></li>
+        <li><a href="/roadmap">roadmap</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Весь блок страницы целиком -->
+  <main class="lesson">
+    <!-- Левая часть с самим уроком -->
+    <div class="lesson__page">
+      <div class="lesson__header">    
+        <img src="{{ front.poster.url }}" alt="" class="lesson__img">
+        <h1 class="lesson__title">{{ front.title }}</h1>
+      </div>
+      
+      <div class="lesson_description">
+        <p>{{ front.tagline }}</p>
+      </div>
+      <h3 class="lesson__video-title">видеоурок</h3>  
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/0zGKTcQR1gI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h3 class="lesson__subtitle">общая информация о предмете</h3>
+      <div class="leeson__article">
+        <p>{{ front.description }}</p>
+      </div>
+      <h4 class="homework__title">задание для самостоятельной работы</h4>
+      <ul class="homework__items">
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</li>
+        <li>Uempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse</li>
+        <li>Ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel</li>
+      </ul>
+    </div>
+    <!-- Правая часть с навигацией и дополнениями -->
+    <div class="lesson__sidebar">
+      <div class="coursenav">
+        <h3 class="coursenav__title">навигация по курсу</h3>
+        {% get_front %}
+      </div>
+      <div class="resource">
+        <h4>Полезные ресурсы</h4>
+        <ul>
+          <li><a href="#">Habr</a></li>
+          <li><a href="#">StackOverflow</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+      </div>
+      <div class="lesson__help">
+        <h4>Появились сложности?</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+        <a href="#" class="help__btn btn--blue">задать вопрос</a>
+      </div>
+      
+    </div>
+  </main>
+  {% endblock content %}

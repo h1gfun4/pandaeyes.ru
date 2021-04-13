@@ -1,0 +1,6 @@
+{% load static %}
+{% for front in scrollMenu %}
+    <ul class="coursenav__items">
+      <li><a href="{% url 'front_namber' front.url %}">{{ front.title }}</a></li>
+    </ul>
+{% endfor %}

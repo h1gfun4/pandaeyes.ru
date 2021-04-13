@@ -1,0 +1,57 @@
+{% extends "mainApp/base.html" %} {% block content %}
+<header>
+  {% load static %}
+  {% load article_tag %}
+  <div class="top-header">
+    <div class="text-logo">
+      <img src="{% static 'image/text-logo.png'%}" alt="" />
+    </div>
+  </div>
+  <img class="img-logo" src="{% static 'image/logo_panda.PNG'%}" alt="" />
+      <nav class="page-nav-container">
+        <ul class="page-nav-items">
+          <li><a href="/blog">наш блог</a></li>
+          <li><a href="/book">учебник</a></li>
+          <li><a href="/about">о проекте</a></li>
+          <li><a href="/roadmap">roadmap</a></li>
+        </ul>
+      </nav>
+</header>
+<main class="main-container">
+  <section class="advantages-container">
+    <div class="advantages-left">
+      <!-- Заголовок и подпись-->
+      <h1>pandaeyes</h1>
+      <p>
+        свободное изучение<br />
+        IT технологий
+      </p>
+    </div>
+    <div class="advantages-right"> 
+      <!--Цели проекта (заголовок и список)-->
+      <h2>цели проекта</h2>
+      <ul>
+        <li>
+          Онлайн школа IT технологий pandaeyes систематизировала для вас большое количество матерьялов из разных сфер IT технологий!
+        </li>
+        <li>
+          Обучение начинается с азов computer science: персональный компьютер, комплектующие, интернет, сети. После которых вы планомерно перейдете к более сложным темам.
+          </li>
+        <li>
+          Программа рассчитана на новичков без опыта программирования и начинающих с небольшим опытом.
+        </li>
+        <li>
+          Видео-уроки,обратная связь, домашнии задания и многое другое, а еще все это абсалютно бесплатно.
+        </li>
+        <li>
+          Pandaeyes, мы обучаемся, обучая вас.
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="articles-container">
+<!--Блок со статьями-->
+{% get_last_article %}
+  </section>
+</main>
+{% endblock %}
